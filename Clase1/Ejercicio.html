@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2 style="color:blueviolet">
+        Crear una lista desordenada con 10 elementos, usando un bucle for.
+        Tener en cuenta que solo se puede utilizar un unico appendChild, asi
+        minimizamos el tiempo de modificaciones en el DOM.
+    </h2>
+    <hr>
+
+    <script>
+
+        var ul = document.createElement('ul')
+
+        for(var i=0; i<10; i++) {
+            //ul.innerHTML = ul.innerHTML + ('<li> el' + (i+1) + '</li>')
+            ul.innerHTML +=  '<li> el' + (i+1) + '</li>'
+           /*  //Ineficiente
+            var li = document.createElement('li')
+            li.innerText = 'el' + (i+1)
+            ul.appendChild(li) */
+        }
+
+        document.body.appendChild(ul)
+
+    </script>
+    
+</body>
+</html>
