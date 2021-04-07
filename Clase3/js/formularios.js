@@ -151,16 +151,38 @@ function validarInput(dato) {
     }
 }
 
+function validarInputconRegExp(dato) {
+    //let regExpCampoNombre = /^e{4}\w{3,15}l{2}$/
+    //let regExpCampoNombre = /^[A-Z][a-z]{2,14}$/
+    let regExpCampoMail = /^\w+@(gmail|hotmail)\.\w{2,3}$/
+
+    /* if(!regExpCampoNombre.test(dato)) {
+        input.setCustomerValidityJS5('Campo no valido')
+        return null
+    }  */
+    if(!regExpCampoMail.test(dato)) {
+        input.setCustomerValidityJS5('Campo mail no valido')
+        return null
+    } 
+    else {
+        input.setCustomerValidityJS5(null)
+        return dato
+    }
+}
+
+
 input.addEventListener('input', () => {
     //let dato = input.value
-    validarInput(input.value)
+    //validarInput(input.value)
+    validarInputconRegExp(input.value)
 
     //console.log('dato desde input:', dato, 'longitud:', longitud)
 })
 
 form.addEventListener('submit', e => {
     e.preventDefault()
-    let dato = validarInput(input.value)
+   // let dato = validarInput(input.value)
+    let dato = validarInputconRegExp(input.value)
     if(dato) {
         console.log('Dato valido', '['+dato+']')
     }
@@ -170,6 +192,6 @@ form.addEventListener('submit', e => {
 //-------------------------------------------------------------------------
 // Expresiones regulares
 //--------------------------------------------------------------------------
-let miMensaje = 'Hole bc'
-let miRegExp = /e bc/
+let miMensaje = 'Hola BC'
+let miRegExp = /a bc/
 console.log(miRegExp.test(miMensaje))
