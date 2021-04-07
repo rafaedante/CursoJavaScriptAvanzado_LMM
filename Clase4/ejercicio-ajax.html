@@ -19,6 +19,37 @@
         plantilla en un archivo externo, dentro de mi pagina web.
         La idea es disponer de un boton que cargue ese contenido dinamicamente.
     </h3>
+    <hr>
+
+    <h1>Mi pagina</h1>    
+    <button>cargar contenido</button>
+
+
+    <script>
+        let btn = document.querySelector('button')
+        let contenidoCargado = false
+        btn.addEventListener('click', () => {
+            if(!contenidoCargado) {
+
+                let xhr = new XMLHttpRequest
+                xhr.open('get', 'plantilla.html')
+                xhr.addEventListener('load', () => {
+                    if(xhr.status == 200) {
+                        let plantilla = xhr.response
+                        console.log(plantilla)
+
+                        let div = document.createElement('div')
+                        div.innerHTML = plantilla
+                        document.body.appendChild(div)
+                        contenidoCargado = true
+                    } else {
+                        console.error('Error! status:', xhr.status)
+                    }
+                })
+                xhr.send()
+            }            
+        })
+    </script>
 
 </body>
 </html>
