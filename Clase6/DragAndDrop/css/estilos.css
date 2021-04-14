@@ -1,0 +1,17 @@
+#drop {
+    width: 300px;
+    height: 300px;
+    border: 2px dashed blue;
+    color: red;
+    text-align: center;
+    line-height: 300px;
+    font-size: 24px;
+}
+
+input {
+    display: none; 
+}
+
+label {
+    display: block;
+}
