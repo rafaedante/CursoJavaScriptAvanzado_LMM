@@ -1,0 +1,12 @@
+{
+  "name": "ejemplonodejsackend",
+  "version": "1.0.0",
+  "description": "Proyecto de prueba servidor http en node js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "RDI",
+  "license": "ISC"
+}
